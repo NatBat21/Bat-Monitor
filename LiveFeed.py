@@ -11,10 +11,10 @@ camera.resolution = (640, 480)
 camera.framerate = 32
 rawCapture = PiRGBArray(camera, size=(640, 480))
 
-# allow the camera to adjust
+#allow the camera to adjust
 time.sleep(0.1)
 
-# capture frames from the camera
+#capture frames from the camera
 for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True):
     #grab the NumPy array representing the image, then initialise the timestamp
     image = frame.array
