@@ -1,3 +1,4 @@
+#record an audio file when frequency threshold is reached
 #import libraries
 from subprocess import call
 from datetime import datetime
