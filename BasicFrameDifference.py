@@ -1,3 +1,6 @@
+#Record a video when motion is detected
+
+#import libraries 
 import picamera
 from time import sleep
 from datetime import datetime
