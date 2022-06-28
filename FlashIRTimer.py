@@ -1,3 +1,6 @@
+#Sunset and sunrise video recordings using triggerable IR lamps and a pir sensor
+#Time is checked every 10 minutes
+
 import picamera
 from gpiozero import MotionSensor
 import datetime
@@ -9,11 +12,11 @@ import logging
 #set pin that pir sensor is connected to 
 pir = MotionSensor(4)
 
-#set pin that IR lamps are connected to.  
+#set pin that IR lamps are connected to  
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(27, GPIO.OUT)
 
-#allow pir to settle
+#allow pir sensor to settle
 time.sleep(5)
 print('Ready!')
 time.sleep(5)
@@ -76,6 +79,7 @@ while True:
         time.sleep(10)
         camera.stop_recording()
         GPIO.output(27, GPIO.LOW)
+        
         #logging parameters
         start_time = datetime.datetime.now() - datetime.timedelta(seconds=10)
         start = start_time.strftime('%Y-%m-%d %H-%M-%S')
