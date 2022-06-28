@@ -14,7 +14,7 @@ while (True):
         #name file using date and time
         output_filename = "/home/pi/Audio/" +"Audio-" + datetime.now().strftime("%d.%m.%Y-%H.%M.%S") +".wav"
         
-        command = ['rec', '-c' ,'1', '-r', '250000', output_filename, 'sinc', '10k', 'silence' ,'1', '0.1', '1%', 'trim', '0', '5']
+        command = ['rec', '-c' ,'1', '-r', '250000', output_filename, 'sinc', '10k', 'silence' ,'1', '0.001', '1%', 'trim', '0', '5']
 
         call(command)
         
