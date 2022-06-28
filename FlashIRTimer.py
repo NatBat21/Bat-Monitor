@@ -8,7 +8,6 @@ import RPi.GPIO as GPIO
 import time
 import logging
 
-
 #set pin that pir sensor is connected to 
 pir = MotionSensor(4)
 
