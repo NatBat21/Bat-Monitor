@@ -4,7 +4,7 @@ from datetime import datetime
 
 # audio settings
 # frequency threshold = 10 kHz
-# volume threshold = 15 dB
+# volume threshold = 50 dB
 # sample rate = 250,000 Hz
 # channel = 1
 # length of audio recording = 5 seconds
