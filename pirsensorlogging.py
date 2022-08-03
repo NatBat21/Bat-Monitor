@@ -7,6 +7,7 @@ import RPi.GPIO as GPIO
 from time import sleep
 import io
 import logging
+import gpiozero as gz
 
 #set pin that pir sensor is connected to 
 pir = MotionSensor(4)
@@ -18,6 +19,9 @@ print('Ready!')
 #set directory for videos
 videopath= "/home/pi/testing/"
 #videopath="/media/usb/"
+
+#record temperature in log file
+temp=gz.CPUTemperature().temperature
 
 #start recording a circular stream that keeps 20 seconds of video
 camera = picamera.PiCamera()
@@ -44,7 +48,7 @@ try:
         start = start_time.strftime('%Y-%m-%d %H-%M-%S')
         end_time = datetime.now()
         end = end_time.strftime('%Y-%m-%d %H-%M-%S')
-        logging.info("%s ~ %s (%f)" %(start, end,(end_time-start_time).total_seconds()))
+        logging.info("%s ~ %s (%f) %s" %(start, end,(end_time-start_time).total_seconds(), temp))
         print("Recording finished!")
         sleep(2)
 finally:
