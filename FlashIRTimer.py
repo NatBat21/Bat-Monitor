@@ -7,6 +7,7 @@ import datetime
 import RPi.GPIO as GPIO
 import time
 import logging
+import gpiozero as gz
 
 #set pin that pir sensor is connected to 
 pir = MotionSensor(4)
@@ -48,6 +49,8 @@ sunrise_stop_recording_min= 00
 sunrise_start_time=datetime.time((sunrise_start_recording_hour), (sunrise_start_recording_min))
 sunrise_end_time=datetime.time((sunrise_stop_recording_hour),(sunrise_stop_recording_min))
 
+#record temperature in log file
+temp=gz.CPUTemperature().temperature
 
 def check_time(sunrise_start_time, sunrise_end_time, sunset_start_time, sunset_end_time):
     check_time = datetime.datetime.now().time()
@@ -85,7 +88,7 @@ while True:
         start = start_time.strftime('%Y-%m-%d %H-%M-%S')
         end_time = datetime.datetime.now()
         end = end_time.strftime('%Y-%m-%d %H-%M-%S')
-        logging.info("%s ~ %s (%f)" %(start, end,(end_time-start_time).total_seconds()))
+        logging.info("%s ~ %s (%f) %s" %(start, end,(end_time-start_time).total_seconds(), temp))
         print("Recording finished!")
         time.sleep(2)
    else:
