@@ -1,4 +1,6 @@
 #Record a video when motion is detected
+#Original motion detection script by brainflakes. Improved by pageauc, peewee2 and Kesthal (www.raspberrypi.org/phpBB3/viewtopic.php?f=43&t=45235)
+#Updated to run in python3 by Alexander Baran-Harper (http://thezanshow.com/electronics-tutorials/raspberry-pi/tutorial-17)
 
 #import libraries 
 import picamera
