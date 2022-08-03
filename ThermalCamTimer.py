@@ -1,3 +1,5 @@
+#Record thermal video of set duration
+
 import cv2
 import numpy as np
 import time
@@ -18,7 +20,7 @@ frame_height = int(cap.get(4))
 #Set file paths and duration
 
 videopath='/home/pi/testing/'
-duration = 20 #in seconds. This is not exact.
+duration = 30 #in seconds. This is not exact.
 end_time= datetime.datetime.now() + datetime.timedelta(seconds=duration)
 
 video_cod = cv2.VideoWriter_fourcc(*'XVID')
