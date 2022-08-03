@@ -26,7 +26,7 @@ end_time= datetime.datetime.now() + datetime.timedelta(seconds=duration)
 video_cod = cv2.VideoWriter_fourcc(*'XVID')
 video_output= cv2.VideoWriter(videopath + datetime.datetime.now().strftime("%d.%m.%Y-%H.%M.%S") + '.avi',
                       video_cod,
-                      20,
+                      10,
                       (frame_width,frame_height))
 
 
