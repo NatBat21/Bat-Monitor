@@ -1,4 +1,4 @@
-#Record a video when motion is detected
+#Record a video when motion is detected using a difference in pixel intensities between frames
 #Original motion detection script by brainflakes. Improved by pageauc, peewee2 and Kesthal (www.raspberrypi.org/phpBB3/viewtopic.php?f=43&t=45235)
 #Updated to run in python3 by Alexander Baran-Harper (http://thezanshow.com/electronics-tutorials/raspberry-pi/tutorial-17)
 
