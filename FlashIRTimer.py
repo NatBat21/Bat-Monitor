@@ -14,6 +14,7 @@ pir = MotionSensor(4)
 #set pin that IR lamps are connected to  
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(27, GPIO.OUT)
+GPIO.output(27, GPIO.LOW)
 
 #allow pir sensor to settle
 time.sleep(5)
